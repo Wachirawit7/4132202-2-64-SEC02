@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  react:
+    container_name: react
+    build: .
+    volumes:
+      - ./src:app/src
+      - ./public/assets:/app/public/assets
+      - ./app/node_modules
+    ports:
+      - 3000:3000
+    stdin_open: true
+    command: npm start
